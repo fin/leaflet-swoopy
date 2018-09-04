@@ -669,6 +669,7 @@ L$1.SwoopyArrow = L$1.Layer.extend({
 
   _initSVG: function _initSVG() {
     this._svg = L$1.SVG.create('svg');
+    this._svg.setAttribute('pointer-events', 'none');
     this._currentId = id++;
     this._arrow = this._createArrow();
     this._svg.appendChild(this._arrow);
@@ -816,6 +817,7 @@ L$1.SwoopyArrow = L$1.Layer.extend({
     this._map = map;
     this._currentPath.parentNode.removeChild(this._currentPath);
     this._map.removeLayer(this._currentMarker);
+    this._map.removeLayer(this._svg);
   }
 });
 
